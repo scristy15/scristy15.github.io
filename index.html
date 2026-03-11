@@ -1,219 +1,422 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarita Loya Art</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #2b2b2b;
-      background-color: #f6f5f3;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      padding: 4rem 1rem 3rem;
-      text-align: center;
-      background: linear-gradient(135deg, #ede9e3, #f6f5f3);
-    }
+<title>Sarita Loya | Artista Visual</title>
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      margin-bottom: 0.5rem;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    header p {
-      font-size: 1.1rem;
-      color: #555;
-    }
+<style>
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#f6f5f3;
+color:#2c2c2c;
+line-height:1.6;
+}
 
-    nav a:hover {
-      color: #7c6f64;
-    }
+/* NAV */
 
-    section {
-      padding: 4rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+nav{
+display:flex;
+justify-content:center;
+gap:2rem;
+padding:1rem;
+background:white;
+border-bottom:1px solid #e2e2e2;
+position:sticky;
+top:0;
+}
 
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
+nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
 
-    .about {
-      max-width: 750px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.05rem;
-      color: #444;
-    }
+nav a:hover{
+color:#7a6d63;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
+/* HERO */
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+.hero{
+height:70vh;
+background-image:url("hero.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    }
+.hero-overlay{
+background:rgba(0,0,0,0.35);
+padding:3rem;
+}
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:0.5rem;
+}
 
-    .card-content {
-      padding: 1.2rem 1.4rem 1.6rem;
-    }
+.hero p{
+font-size:1.2rem;
+}
 
-    .card-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
+/* SECTION */
 
-    .card-content p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: #555;
-    }
+section{
+max-width:1100px;
+margin:auto;
+padding:4rem 1rem;
+}
 
-    .card-content a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #7c6f64;
-    }
+h2{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:2rem;
+text-align:center;
+}
 
-    .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      background: #eee9e3;
-      color: #5c534a;
-      margin-bottom: 0.6rem;
-    }
+/* ABOUT */
 
-    footer {
-      background: #ffffff;
-      text-align: center;
-      padding: 2rem 1rem;
-      border-top: 1px solid #ddd;
-      font-size: 0.9rem;
-      color: #666;
-    }
+.about{
+max-width:700px;
+margin:auto;
+text-align:center;
+color:#555;
+}
 
-    footer a {
-      color: #7c6f64;
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-  </style>
+.about-container{
+display:flex;
+align-items:center;
+gap:2rem;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.about-photo img{
+width:320px;
+height:auto;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,0.18);
+}
+
+.about-text{
+max-width:500px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:2rem;
+}
+
+/* CARD */
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card-img{
+overflow:hidden;
+cursor:pointer;
+}
+
+.card-img img{
+width:100%;
+height:260px;
+object-fit:cover;
+transition:transform .4s ease;
+}
+
+.card-img:hover img{
+transform:scale(1.08);
+}
+
+.card-content{
+padding:1.2rem;
+}
+
+.card-content h3{
+font-family:'Playfair Display',serif;
+margin-bottom:0.5rem;
+}
+
+.price{
+font-weight:600;
+margin:0.5rem 0;
+}
+
+.button{
+display:inline-block;
+margin-top:0.6rem;
+text-decoration:none;
+color:#7a6d63;
+font-weight:500;
+}
+
+/* EVENTS */
+
+.event{
+background:white;
+padding:1.5rem;
+border-radius:10px;
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
+margin-bottom:1rem;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:2rem;
+background:white;
+border-top:1px solid #ddd;
+margin-top:3rem;
+}
+
+footer a{
+color:#7a6d63;
+text-decoration:none;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:6px;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.lightbox.active{
+display:flex;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:32px;
+color:white;
+cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Sarita Loya Art</h1>
-    <p>UX/UI Designer · Artista Visual</p>
-  </header>
+<nav>
+<a href="#obras">Obras</a>
+<a href="#eventos">Eventos</a>
+<a href="#sobre">Sobre mí</a>
+<a href="#contacto">Contacto</a>
+</nav>
 
-  <nav>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#ux">UX/UI</a>
-    <a href="#arte">Arte</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<section class="hero">
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <div class="about">
-      <p>
-        Combino el pensamiento estratégico del diseño UX/UI con la sensibilidad del arte.
-        Me interesa crear experiencias digitales funcionales, humanas y visualmente
-        armoniosas, así como explorar emociones y narrativas a través de la pintura.
-      </p>
-    </div>
-  </section>
+<div class="hero-overlay">
 
-  <section id="ux">
-    <h2>Proyectos UX/UI</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="ux-desing.jpg" alt="Proyecto UX" />
-        <div class="card-content">
-          <span class="tag">UX / UI</span>
-          <h3>Museums & Events App</h3>
-          <p>Investigación, wireframes y prototipo enfocado en experiencia cultural.</p>
-          <a href="museums-events-case-study.html">Ver caso de estudio →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<h1>Sarita Loya</h1>
 
-  <section id="arte">
-    <h2>Pinturas</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="arte_pintura.jpg" alt="Obra artística" />
-        <div class="card-content">
-          <span class="tag">Acrílico</span>
-          <span class="tag">Óleo</span>
-           <span class="tag">Acuarela</span>
-          <h3>Galeria de arte</h3>
-          <p>En esta sección podrás ver las obras que he realizado.</p>
-          <a href="galeria-arte.html">Ver galeria →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<p>Pintura contemporánea inspirada en la fortaleza femenina</p>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <div class="about">
-      <p>
-        <strong>Figma / Behance:</strong> <a href="#">tuusuario</a><br />
-        <strong>Instagram:</strong> <a href="https://www.instagram.com/saritaloyaart/">@SaritaLoyaArt</a>
-      </p>
-    </div>
-  </section>
+</div>
 
-  <footer>
-    <p>© 2026 · Sarita Loya</p>
-  </footer>
+</section>
 
+<section id="obras">
+
+<h2>Obras</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-img">
+<img src="Soledad.png" onclick="openLightbox('Soledad.png')">
+</div>
+<div class="card-content">
+
+<h3>Soledad</h3>
+
+<p>Óleo · 50 x 30 cm</p>
+
+<p class="price">$2,500 MXN</p>
+
+<a class="button" href="https://www.instagram.com/saritaloyaart/">Consultar disponibilidad →</a>
+
+</div>
+</div>
+
+<div class="card">
+<div class="card-img">
+<img src="Esperanza.png" onclick="openLightbox('Esperanza.png')">
+</div>
+
+<div class="card-content">
+
+<h3>Esperanza</h3>
+
+<p>Óleo · 50 x 30 cm</p>
+
+<p class="price">$2,500 MXN</p>
+
+<a class="button" href="https://www.instagram.com/saritaloyaart/">Consultar disponibilidad →</a>
+
+</div>
+</div>
+
+<div class="card">
+<div class="card-img">
+<img src="Felicidad.png" onclick="openLightbox('Felicidad.png')">
+</div>
+
+<div class="card-content">
+
+<h3>Felicidad</h3>
+
+<p>Óleo · 50 x 30 cm</p>
+
+<p class="price">$2,500 MXN</p>
+
+<a class="button" href="https://www.instagram.com/saritaloyaart/">Consultar disponibilidad →</a>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="eventos">
+
+<h2>Eventos y exposiciones</h2>
+
+
+<div class="event">
+<h3>Exposición colectiva Mi Propia Voz</h3>
+<p>Mezzaninne del congreso del estado de Chihuahua ·  Enero 2026</p>
+</div>
+
+<div class="event">
+<h3>Exposición colectiva Árido en MUDECH</h3>
+<p>Delicias ·  Noviembre 2025 a Enero 2026</p>
+</div>
+
+<div class="event">
+<h3>Impartí taller de pintura “Pintando parques nacionales de EUA”</h3>
+<p>Esquina Benjamin Franklin · 2025</p>
+</div>
+
+<div class="event">
+<h3>Exposición visual “Región Árida””</h3>
+<p>Chihuahua · 2025</p>
+</div>
+
+</section>
+
+<section id="sobre">
+
+<h2>Sobre la artista</h2>
+
+<div class="about-container">
+
+<div class="about-photo">
+<img src="sarita.jpg" alt="Sarita Loya artista">
+</div>
+
+<div class="about-text">
+
+<p>
+Soy artista visual interesada en explorar la fortaleza emocional y la sensibilidad femenina a través del color, la textura y la naturaleza.  
+Mi trabajo combina flores, símbolos y figuras para representar resiliencia, crecimiento y transformación.
+</p>
+
+</div>
+
+</div>
+
+<section id="contacto">
+
+<h2>Contacto</h2>
+
+<div class="about">
+
+<p>
+
+Instagram:  
+<a href="https://www.instagram.com/saritaloyaart/">
+@saritaloyaart
+</a>
+
+<br><br>
+
+Para compra de obra o colaboraciones puedes escribirme por Instagram.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 · Sarita Loya</p>
+
+</footer>
+
+
+<div id="lightbox" class="lightbox">
+
+<span class="close" onclick="closeLightbox()">×</span>
+
+<img id="lightbox-img">
+
+</div>
+
+<script>
+
+function openLightbox(src){
+document.getElementById("lightbox-img").src = src;
+document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
+}
+
+</script>
 </body>
 </html>
